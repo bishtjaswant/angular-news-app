@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row mt-3">
+
+    <h1 class=" display-1">Today's Top HeadLines</h1>
+
+    <ng-template ngFor let-news [ngForOf]="topHeadlineData" let-i="index" [ngForTrackBy]="trackByFn">
+
+      <div class="col-md-3">
+        <div class="card">
+          <img
+            src="{{news?.urlToImage ?  news?.urlToImage: 'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found-300x169.jpg'}}"
+            alt="" class="card-img">
+          <div class="p-4">
+            <strong class="card-title mt-1">{{news?.title.substring(0, 65)}}</strong>
+            <div class="card-subtitle">Author: {{news?.author}}</div>
+            <!--             <div class=" text-dark">{{ news?.description && news?.description.substr(0,85) }}</div>-->
+            <div class=" mt-4">
+              <a href="{{news?.url}}" target="_blank" referrerpolicy="no-referrer" class="  btn btn-primary">Read
+                More</a>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </ng-template>
+  </div>
+</div>
